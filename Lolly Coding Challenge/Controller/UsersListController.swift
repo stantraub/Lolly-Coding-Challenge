@@ -25,9 +25,6 @@ final class UsersListController: UICollectionViewController {
     private func configureUI() {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.identifier)
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Users"
     }
     
     // MARK: - API
@@ -39,7 +36,6 @@ final class UsersListController: UICollectionViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.collectionView.reloadData()
             }
-            
         }
     }
 }

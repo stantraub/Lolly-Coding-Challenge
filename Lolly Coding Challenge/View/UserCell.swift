@@ -19,21 +19,21 @@ class UserCell: UICollectionViewCell {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .label
         return label
     }()
     
     private let cityLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .label
         return label
     }()
     
     private let birthdateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .label
         return label
     }()
@@ -46,6 +46,8 @@ class UserCell: UICollectionViewCell {
         
         layer.cornerRadius = 25
         layer.cornerCurve = .continuous
+        
+        addShadow()
         
         addSubview(nameLabel)
         nameLabel.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)

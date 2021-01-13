@@ -99,6 +99,13 @@ extension UIView {
         anchor(top: view.topAnchor, left: view.leftAnchor,
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
+    
+    func addShadow() {
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 0.2
+        layer.shadowColor = UIColor.label.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 3)
+    }
 }
 
 extension UIViewController {

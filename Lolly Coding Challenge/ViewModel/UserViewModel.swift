@@ -34,7 +34,7 @@ struct UserViewModel {
     
     // MARK: - Helpers
     
-    func calcAge(birthday: String) -> Int {
+    private func calcAge(birthday: String) -> Int {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "MM-dd-yyyy"
         let birthdayDate = dateFormater.date(from: birthday)
