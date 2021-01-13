@@ -11,10 +11,10 @@
 ## Getting Started
 
 ```bash
-$ git clone https://github.com/stantraub/FetchRewardsChallenge.git
-$ cd FetchRewardsChallenge
+$ git clone https://github.com/stantraub/Lolly-Coding-Challenge.git
+$ cd Lolly\ Coding\ Challenge
 $ pod install
-$ open Fetch\ Rewards\ Challenge.xcworkspace/
+$ open Lolly\ Coding\ Challenge.xcworkspace/
 ```
 
 ## Technologies Used
