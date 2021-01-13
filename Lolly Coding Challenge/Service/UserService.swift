@@ -5,20 +5,23 @@
 //  Created by Stanley Traub on 1/12/21.
 //
 
-import FirebaseFirestore
+import Firebase
 
 struct UserService {
-    static func uploadUsers(users: [User], completion: @escaping(Bool) -> Void) {
+    static func uploadUsers(users: [[String: String]], completion: @escaping(Bool) -> Void) {
         for user in users {
-            let data = [
-                "name": user.name,
-                "city": user.city,
-                "birthdate": user.birthdate
-            ] as [String: Any]
-            
-            COLLECTION_USERS.addDocument(data: data)
+            COLLECTION_USERS.addDocument(data: user)
         }
         
         completion(true)
+    }
+    
+    static func fetchUsers(completion: @escaping([User]) -> Void) {
+        COLLECTION_USERS.getDocuments { snapshot, error in
+            guard let snapshot = snapshot else { return }
+            let users = snapshot.documents.map({ User(dictionary: $0.data() )})
+            
+            completion(users)
+        }
     }
 }

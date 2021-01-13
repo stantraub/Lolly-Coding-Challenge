@@ -19,6 +19,20 @@ class UserCell: UICollectionViewCell {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .label
+        return label
+    }()
+    
+    private let cityLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .label
+        return label
+    }()
+    
+    private let birthdateLabel: UILabel = {
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .label
         return label
@@ -35,6 +49,12 @@ class UserCell: UICollectionViewCell {
         
         addSubview(nameLabel)
         nameLabel.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
+        
+        addSubview(cityLabel)
+        cityLabel.center(inView: self)
+        
+        addSubview(birthdateLabel)
+        birthdateLabel.centerY(inView: self, rightAnchor: rightAnchor, paddingRight: 16)
     }
     
     required init?(coder: NSCoder) {
@@ -45,6 +65,9 @@ class UserCell: UICollectionViewCell {
     
     private func configure() {
         guard let viewModel = viewModel else { return }
+        
         nameLabel.text = viewModel.name
+        cityLabel.text = viewModel.city
+        birthdateLabel.text = viewModel.birthdate
     }
 }
